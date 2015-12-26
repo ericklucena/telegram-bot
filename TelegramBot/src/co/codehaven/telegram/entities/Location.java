@@ -1,9 +1,22 @@
 package co.codehaven.telegram.entities;
 
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Location {
 
-	private float logitude;
-	private float latitude;
+	public static final String LONGITUDE_FIELD ="longitude";
+	@JsonProperty(LONGITUDE_FIELD)
+	private double logitude;
+	public static final String LATITUDE_FIELD ="latitude";
+	@JsonProperty(LATITUDE_FIELD)
+	private double latitude;
+	
+	public Location(JSONObject jsonObject) {
+		this.logitude = jsonObject.getDouble(LONGITUDE_FIELD);
+		this.latitude = jsonObject.getDouble(LATITUDE_FIELD);
+	}
 	
 	public Location(float logitude, float latitude) {
 		super();
@@ -11,7 +24,7 @@ public class Location {
 		this.latitude = latitude;
 	}
 
-	public float getLogitude() {
+	public double getLogitude() {
 		return logitude;
 	}
 
@@ -19,7 +32,7 @@ public class Location {
 		this.logitude = logitude;
 	}
 
-	public float getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 

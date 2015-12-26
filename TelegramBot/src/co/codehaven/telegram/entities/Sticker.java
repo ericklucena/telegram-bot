@@ -1,13 +1,39 @@
 package co.codehaven.telegram.entities;
 
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Sticker {
 	
+	public static final String FILE_ID_FIELD ="file_id";
+	@JsonProperty(FILE_ID_FIELD)
 	private String fileId;
+	public static final String WIDTH_FIELD ="width";
+	@JsonProperty(WIDTH_FIELD)
 	private int width;
+	public static final String HEIGHT_FIELD ="height";
+	@JsonProperty(HEIGHT_FIELD)
 	private int height;
+	public static final String THUMB_FIELD ="thumb";
+	@JsonProperty(THUMB_FIELD)
 	private PhotoSize thumb;	//Optional
+	public static final String FILE_SIZE_FIELD ="file_size";
+	@JsonProperty(FILE_SIZE_FIELD)
 	private int fileSize;		//Optional
 
+	public Sticker(JSONObject jsonObject) {
+		this.fileId = jsonObject.getString(FILE_ID_FIELD);
+		this.width = jsonObject.getInt(WIDTH_FIELD);
+		this.height = jsonObject.getInt(HEIGHT_FIELD);
+		if (jsonObject.has(THUMB_FIELD)) {
+			this.thumb = new PhotoSize(jsonObject.getJSONObject(THUMB_FIELD));
+		}
+		if (jsonObject.has(FILE_SIZE_FIELD)) {
+			this.fileSize = jsonObject.getInt(FILE_SIZE_FIELD);
+		}
+	}
+	
 	public Sticker(String fileId, int width, int height, PhotoSize thumb, int fileSize) {
 		this.fileId = fileId;
 		this.width = width;
