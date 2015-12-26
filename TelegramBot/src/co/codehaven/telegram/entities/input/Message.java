@@ -1,4 +1,4 @@
-package co.codehaven.telegram.entities;
+package co.codehaven.telegram.entities.input;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,26 +1,28 @@
-package co.codehaven.telegram.entities;
+package co.codehaven.telegram.entities.input;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 
 
-public class ReplyKeyboardMarkup {
+
+public class ReplyKeyboardMarkup implements ReplyKeyboard{
 
 	public static final String KEYBOARD_FIELD ="keyboard";
 	@JsonProperty(KEYBOARD_FIELD)
 	private String[][] keyboard;
 	public static final String RESIZE_KEYBOARD_FIELD ="resize_keyboard";
 	@JsonProperty(RESIZE_KEYBOARD_FIELD)
-	private boolean resizeKeyboard;		//Optional
+	private Boolean resizeKeyboard;		//Optional
 	public static final String ONE_TIME_KEYBOARD_FIELD ="one_time_keyboard";
 	@JsonProperty(ONE_TIME_KEYBOARD_FIELD)
-	private boolean oneTimeKeyboard;	//Optional
-	public static final String SELECTIVE ="selective";
-	@JsonProperty(SELECTIVE)
-	private boolean selective;			//Optional
+	private Boolean oneTimeKeyboard;	//Optional
+	public static final String SELECTIVE_FIELD ="selective";
+	@JsonProperty(SELECTIVE_FIELD)
+	private Boolean selective;			//Optional
 	
 	public ReplyKeyboardMarkup(JSONObject jsonObject) {
 		
@@ -39,8 +41,8 @@ public class ReplyKeyboardMarkup {
         if (jsonObject.has(ONE_TIME_KEYBOARD_FIELD)) {
         	this.oneTimeKeyboard = jsonObject.getBoolean(ONE_TIME_KEYBOARD_FIELD);
         }
-        if (jsonObject.has(SELECTIVE)) {
-        	this.selective = jsonObject.getBoolean(SELECTIVE);
+        if (jsonObject.has(SELECTIVE_FIELD)) {
+        	this.selective = jsonObject.getBoolean(SELECTIVE_FIELD);
         }
         
 	}
@@ -84,6 +86,33 @@ public class ReplyKeyboardMarkup {
 
 	public void setSelective(boolean selective) {
 		this.selective = selective;
+	}
+
+	@Override
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+        JSONArray jsonkeyboard = new JSONArray();
+
+        for (String[] innerRow : this.keyboard) {
+            JSONArray innerJSONKeyboard = new JSONArray();
+            for (String element: innerRow) {
+                innerJSONKeyboard.put(element);
+            }
+            jsonkeyboard.put(innerJSONKeyboard);
+        }
+        json.put(ReplyKeyboardMarkup.KEYBOARD_FIELD, jsonkeyboard);
+
+        if (this.oneTimeKeyboard != null) {
+            json.put(ReplyKeyboardMarkup.ONE_TIME_KEYBOARD_FIELD, this.oneTimeKeyboard);
+        }
+        if (this.resizeKeyboard != null) {
+            json.put(ReplyKeyboardMarkup.RESIZE_KEYBOARD_FIELD, this.resizeKeyboard);
+        }
+        if (this.selective != null) {
+            json.put(ReplyKeyboardMarkup.SELECTIVE_FIELD, this.selective);
+        }
+
+        return json;
 	}
 	
 }

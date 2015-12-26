@@ -1,10 +1,12 @@
-package co.codehaven.telegram.entities;
+package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ForceReply {
+import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
+
+public class ForceReply implements ReplyKeyboard {
 	
 	public static final String FORCE_REPLY_FIELD ="force_reply";
 	@JsonProperty(FORCE_REPLY_FIELD)
@@ -35,5 +37,13 @@ public class ForceReply {
 	
 	public void setSelective(boolean selective) {
 		this.selective = selective;
+	}
+
+	@Override
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		json.put(FORCE_REPLY_FIELD, forceReply);
+		json.put(SELECTIVE_FIELD, selective);
+		return json;
 	}
 }

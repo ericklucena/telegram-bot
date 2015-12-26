@@ -1,10 +1,12 @@
-package co.codehaven.telegram.entities;
+package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ReplyKeyboardHide {
+import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
+
+public class ReplyKeyboardHide implements ReplyKeyboard{
 
 	public static final String HIDE_KEYBOARD_FIELD ="hide_keyboard";
 	@JsonProperty(HIDE_KEYBOARD_FIELD)
@@ -35,6 +37,14 @@ public class ReplyKeyboardHide {
 	
 	public void setSelective(boolean selective) {
 		this.selective = selective;
+	}
+
+	@Override
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		json.put(HIDE_KEYBOARD_FIELD, hideKeyboard);
+		json.put(SELECTIVE_FIELD, selective);
+		return json;
 	}
 
 }
