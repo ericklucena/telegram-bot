@@ -5,6 +5,14 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
+		<servlet-name>TelegramWebhook</servlet-name>
+		<servlet-class>co.codehaven.telegram.servlets.TelegramWebhookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TelegramWebhook</servlet-name>
+		<url-pattern>/telegramWebhook</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>SetupWebhook</servlet-name>
 		<servlet-class>co.codehaven.telegram.servlets.SetupTelegramBotWebhook</servlet-class>
 	</servlet>
