@@ -3,8 +3,11 @@ package co.codehaven.telegram.entities.output;
 import org.json.JSONObject;
 
 import co.codehaven.telegram.entities.interfaces.ITelegramApiMethod;
+import co.codehaven.telegram.util.Telegram;
 
 public class SetWebHook implements ITelegramApiMethod{
+	
+	private static final String PATH = "setWebhook";
 	
 	public static final String URL_FIELD = "url";
 	private String url;
@@ -43,6 +46,11 @@ public class SetWebHook implements ITelegramApiMethod{
 			json.put(CERTIFICATE_FIELD, this.certificate);
 		}
 		return json;
+	}
+	
+	@Override
+	public String getMethodUrl() {
+		return Telegram.botUrl()+PATH;
 	}
 
 }

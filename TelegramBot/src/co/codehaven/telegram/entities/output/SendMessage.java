@@ -6,9 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import co.codehaven.telegram.entities.interfaces.ITelegramApiMethod;
 import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
+import co.codehaven.telegram.util.Telegram;
 
 public class SendMessage implements ITelegramApiMethod{
 
+	private static final String PATH = "sendMessage";
+	
 	public static final String CHAT_ID_FIELD = "chat_id";
 	@JsonProperty(CHAT_ID_FIELD)
 	private int chatId;
@@ -112,6 +115,11 @@ public class SendMessage implements ITelegramApiMethod{
 
 	public void setReplyMarkup(ReplyKeyboard replyMarkup) {
 		this.replyMarkup = replyMarkup;
+	}
+
+	@Override
+	public String getMethodUrl() {
+		return Telegram.botUrl()+PATH;
 	}
 	
 }
