@@ -11,7 +11,7 @@ public class SendMessage implements ITelegramApiMethod{
 	private static final String PATH = "sendMessage";
 	
 	public static final String CHAT_ID_FIELD = "chat_id";
-	private int chatId;
+	private String chatId;
 	public static final String TEXT_FIELD = "text";
 	private String text;
 	public static final String PARSE_MODE_FIELD = "parse_mode";
@@ -23,13 +23,13 @@ public class SendMessage implements ITelegramApiMethod{
 	public static final String REPLY_MARKUP_FIELD = "reply_markup";
 	private ReplyKeyboard replyMarkup;// Optional
 	
-	public SendMessage(int chatId, String text) {
+	public SendMessage(String chatId, String text) {
 		super();
 		this.chatId = chatId;
 		this.text = text;
 	}
 
-	public SendMessage(int chatId, String text, String parseMode, String disableWebPagePreview, int replyToMessageId,
+	public SendMessage(String chatId, String text, String parseMode, String disableWebPagePreview, int replyToMessageId,
 			ReplyKeyboard replyMarkup) {
 		super();
 		this.chatId = chatId;
@@ -67,11 +67,11 @@ public class SendMessage implements ITelegramApiMethod{
 		return Telegram.botUrl() + PATH;
 	}
 
-	public int getChatId() {
+	public String getChatId() {
 		return chatId;
 	}
 
-	public void setChatId(int chatId) {
+	public void setChatId(String chatId) {
 		this.chatId = chatId;
 	}
 

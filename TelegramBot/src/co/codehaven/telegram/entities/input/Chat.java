@@ -8,7 +8,7 @@ public class Chat {
 	
 	public static final String ID_FIELD = "id";
 	@JsonProperty(ID_FIELD)
-	private int id;
+	private String id;
 	public static final String TYPE_FIELD = "type";
 	@JsonProperty(TYPE_FIELD)
 	private String type; 		// private | group | supergroup | channel
@@ -27,7 +27,7 @@ public class Chat {
 	
 	public Chat(JSONObject jsonObject) {
 		super();
-		this.id = jsonObject.getInt(ID_FIELD);
+		this.id = Integer.toString(jsonObject.getInt(ID_FIELD));
 		this.type = jsonObject.getString(TYPE_FIELD);
 		if (jsonObject.has(TITLE_FIELD)) {
 			this.title = jsonObject.getString(TITLE_FIELD);			
@@ -44,7 +44,7 @@ public class Chat {
 		
 	}
 
-	public Chat(int id, String type, String title, String username, String firstName, String lastName) {
+	public Chat(String id, String type, String title, String username, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -54,11 +54,11 @@ public class Chat {
 		this.lastName = lastName;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
