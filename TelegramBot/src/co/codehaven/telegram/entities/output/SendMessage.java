@@ -2,8 +2,6 @@ package co.codehaven.telegram.entities.output;
 
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import co.codehaven.telegram.entities.interfaces.ITelegramApiMethod;
 import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 import co.codehaven.telegram.util.Telegram;
@@ -13,22 +11,16 @@ public class SendMessage implements ITelegramApiMethod{
 	private static final String PATH = "sendMessage";
 	
 	public static final String CHAT_ID_FIELD = "chat_id";
-	@JsonProperty(CHAT_ID_FIELD)
 	private int chatId;
 	public static final String TEXT_FIELD = "text";
-	@JsonProperty(TEXT_FIELD)
 	private String text;
 	public static final String PARSE_MODE_FIELD = "parse_mode";
-	@JsonProperty(PARSE_MODE_FIELD)
 	private String parseMode;				// Optional
 	public static final String DISABLE_WEB_PAGE_PREVIEW_FIELD = "disable_web_page_preview";
-	@JsonProperty(DISABLE_WEB_PAGE_PREVIEW_FIELD)
 	private String disableWebPagePreview;	// Optional
 	public static final String REPLY_TO_MESSAGE_ID_FIELD = "reply_to_message_id";
-	@JsonProperty(REPLY_TO_MESSAGE_ID_FIELD)
 	private Integer replyToMessageId;			// Optional
 	public static final String REPLY_MARKUP_FIELD = "reply_markup";
-	@JsonProperty(REPLY_MARKUP_FIELD)
 	private ReplyKeyboard replyMarkup;// Optional
 	
 	public SendMessage(int chatId, String text) {
@@ -36,7 +28,7 @@ public class SendMessage implements ITelegramApiMethod{
 		this.chatId = chatId;
 		this.text = text;
 	}
-	
+
 	public SendMessage(int chatId, String text, String parseMode, String disableWebPagePreview, int replyToMessageId,
 			ReplyKeyboard replyMarkup) {
 		super();
@@ -47,27 +39,33 @@ public class SendMessage implements ITelegramApiMethod{
 		this.replyToMessageId = replyToMessageId;
 		this.replyMarkup = replyMarkup;
 	}
-	
-    public JSONObject toJson() {
-        JSONObject jsonObject = new JSONObject();
 
-        jsonObject.put(CHAT_ID_FIELD, chatId);
-        jsonObject.put(TEXT_FIELD, text);
-        if (parseMode != null) {
-            jsonObject.put(PARSE_MODE_FIELD, parseMode);
-        }
-        if (disableWebPagePreview != null) {
-            jsonObject.put(DISABLE_WEB_PAGE_PREVIEW_FIELD, disableWebPagePreview);
-        }
-        if (replyToMessageId != null) {
-            jsonObject.put(REPLY_TO_MESSAGE_ID_FIELD, replyToMessageId);
-        }
-        if (replyMarkup != null) {
-            jsonObject.put(REPLY_MARKUP_FIELD, replyMarkup.toJson());
-        }
+	@Override
+	public JSONObject toJson() {
+		JSONObject jsonObject = new JSONObject();
 
-        return jsonObject;
-    }
+		jsonObject.put(CHAT_ID_FIELD, chatId);
+		jsonObject.put(TEXT_FIELD, text);
+		if (parseMode != null) {
+			jsonObject.put(PARSE_MODE_FIELD, parseMode);
+		}
+		if (disableWebPagePreview != null) {
+			jsonObject.put(DISABLE_WEB_PAGE_PREVIEW_FIELD, disableWebPagePreview);
+		}
+		if (replyToMessageId != null) {
+			jsonObject.put(REPLY_TO_MESSAGE_ID_FIELD, replyToMessageId);
+		}
+		if (replyMarkup != null) {
+			jsonObject.put(REPLY_MARKUP_FIELD, replyMarkup.toJson());
+		}
+
+		return jsonObject;
+	}
+
+	@Override
+	public String getMethodUrl() {
+		return Telegram.botUrl() + PATH;
+	}
 
 	public int getChatId() {
 		return chatId;
@@ -117,9 +115,4 @@ public class SendMessage implements ITelegramApiMethod{
 		this.replyMarkup = replyMarkup;
 	}
 
-	@Override
-	public String getMethodUrl() {
-		return Telegram.botUrl()+PATH;
-	}
-	
 }
