@@ -14,8 +14,7 @@ public class TelegramHandler {
 	
 	public static void resultObjectHandler(JSONObject jsonObject) {
 		JSONArray jArray = jsonObject.getJSONArray(Telegram.RESULT);
-		
-		
+			
 		for (int i=0; i<jArray.length(); i++) {
 			JSONObject json = jArray.getJSONObject(i);
 			Message message = new Message(json.getJSONObject(Telegram.MESSAGE));
@@ -29,14 +28,7 @@ public class TelegramHandler {
 	}
 	
 	public static void messageHandler(Message message) {
-		if (message.getText() != null) {
-			SendMessage sendMessage = new SendMessage(message.getChat().getId(), message.getText());
-			Network.executeTelegramMethod(sendMessage);
-		}
-		if (message.getSticker() != null) {
-			SendSticker sendSticker = new SendSticker(message.getChat().getId(), message.getSticker().getFileId());
-			Network.executeTelegramMethod(sendSticker);
-		}
+		ParrotHandler.repeat(message);
 	}
 
 }
