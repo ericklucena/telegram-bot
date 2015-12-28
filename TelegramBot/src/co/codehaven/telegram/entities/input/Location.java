@@ -2,15 +2,11 @@ package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Location {
 
 	public static final String LONGITUDE_FIELD ="longitude";
-	@JsonProperty(LONGITUDE_FIELD)
 	private double logitude;
 	public static final String LATITUDE_FIELD ="latitude";
-	@JsonProperty(LATITUDE_FIELD)
 	private double latitude;
 	
 	public Location(JSONObject jsonObject) {

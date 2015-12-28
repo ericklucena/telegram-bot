@@ -2,15 +2,11 @@ package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Update {
 	
 	public static final String UPDATE_ID_FIELD = "update_id";
-	@JsonProperty(UPDATE_ID_FIELD)
 	private int updateId;
 	public static final String MESSAGE_FIELD = "message";
-	@JsonProperty(MESSAGE_FIELD)
 	private Message message;	// Optional
 
 	public Update(JSONObject jsonObject) {

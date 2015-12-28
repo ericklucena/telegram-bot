@@ -3,15 +3,11 @@ package co.codehaven.telegram.entities.input;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class UserProfilePhotos {
 	
 	public static final String TOTAL_COUNT_FIELD ="total_count";
-	@JsonProperty(TOTAL_COUNT_FIELD)
 	private int totalCount;
 	public static final String PHOTOS_FIELD ="photos";
-	@JsonProperty(PHOTOS_FIELD)
 	private PhotoSize[][] photos;
 	
 	public UserProfilePhotos(JSONObject jsonObject) {

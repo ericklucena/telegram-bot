@@ -2,27 +2,19 @@ package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Chat {
 	
 	public static final String ID_FIELD = "id";
-	@JsonProperty(ID_FIELD)
 	private String id;
 	public static final String TYPE_FIELD = "type";
-	@JsonProperty(TYPE_FIELD)
 	private String type; 		// private | group | supergroup | channel
 	public static final String TITLE_FIELD = "title";
-	@JsonProperty(TITLE_FIELD)
 	private String title;		// Optional
 	public static final String USERNAME_FIELD = "username";
-	@JsonProperty(USERNAME_FIELD)
 	private String username;	// Optional
 	public static final String FIRST_NAME_FIELD = "first_name";
-	@JsonProperty(FIRST_NAME_FIELD)
 	private String firstName;	// Optional (only private chat)
 	public static final String LAST_NAME_FIELD = "last_name";
-	@JsonProperty(LAST_NAME_FIELD)
 	private String lastName;	// Optional (only private chat)
 	
 	public Chat(JSONObject jsonObject) {

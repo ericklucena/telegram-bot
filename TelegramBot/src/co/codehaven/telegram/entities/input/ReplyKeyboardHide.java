@@ -2,17 +2,13 @@ package co.codehaven.telegram.entities.input;
 
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 
 public class ReplyKeyboardHide implements ReplyKeyboard{
 
 	public static final String HIDE_KEYBOARD_FIELD ="hide_keyboard";
-	@JsonProperty(HIDE_KEYBOARD_FIELD)
 	private boolean hideKeyboard;
 	public static final String SELECTIVE_FIELD ="selective";
-	@JsonProperty(SELECTIVE_FIELD)
 	private boolean selective;		// Optional
 	
 	public ReplyKeyboardHide(JSONObject jsonObject) {
