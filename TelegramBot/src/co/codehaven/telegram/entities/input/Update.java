@@ -4,9 +4,9 @@ import org.json.JSONObject;
 
 public class Update {
 	
-	public static final String UPDATE_ID_FIELD = "update_id";
+	private static final String UPDATE_ID_FIELD = "update_id";
 	private int updateId;
-	public static final String MESSAGE_FIELD = "message";
+	private static final String MESSAGE_FIELD = "message";
 	private Message message;	// Optional
 
 	public Update(JSONObject jsonObject) {

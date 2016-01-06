@@ -4,9 +4,9 @@ import org.json.JSONObject;
 
 public class Location {
 
-	public static final String LONGITUDE_FIELD ="longitude";
+	private static final String LONGITUDE_FIELD ="longitude";
 	private double logitude;
-	public static final String LATITUDE_FIELD ="latitude";
+	private static final String LATITUDE_FIELD ="latitude";
 	private double latitude;
 	
 	public Location(JSONObject jsonObject) {

@@ -6,9 +6,9 @@ import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 
 public class ForceReply implements ReplyKeyboard {
 	
-	public static final String FORCE_REPLY_FIELD ="force_reply";
+	private static final String FORCE_REPLY_FIELD ="force_reply";
 	private boolean forceReply;
-	public static final String SELECTIVE_FIELD ="selective";
+	private static final String SELECTIVE_FIELD ="selective";
 	private boolean selective;
 
 	public ForceReply(JSONObject jsonObject) {

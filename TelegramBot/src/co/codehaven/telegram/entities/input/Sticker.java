@@ -4,15 +4,15 @@ import org.json.JSONObject;
 
 public class Sticker {
 	
-	public static final String FILE_ID_FIELD ="file_id";
+	private static final String FILE_ID_FIELD ="file_id";
 	private String fileId;
-	public static final String WIDTH_FIELD ="width";
+	private static final String WIDTH_FIELD ="width";
 	private int width;
-	public static final String HEIGHT_FIELD ="height";
+	private static final String HEIGHT_FIELD ="height";
 	private int height;
-	public static final String THUMB_FIELD ="thumb";
+	private static final String THUMB_FIELD ="thumb";
 	private PhotoSize thumb;	//Optional
-	public static final String FILE_SIZE_FIELD ="file_size";
+	private static final String FILE_SIZE_FIELD ="file_size";
 	private int fileSize;		//Optional
 
 	public Sticker(JSONObject jsonObject) {

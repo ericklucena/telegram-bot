@@ -4,13 +4,13 @@ import org.json.JSONObject;
 
 public class Contact {
 
-	public static final String PHONE_NUMBER_FIELD = "phone_number";
+	private static final String PHONE_NUMBER_FIELD = "phone_number";
 	private String phoneNumber;
-	public static final String FIRST_NAME_FIELD = "first_name";
+	private static final String FIRST_NAME_FIELD = "first_name";
 	private String firstName;
-	public static final String LAST_NAME_FIELD = "last_name";
+	private static final String LAST_NAME_FIELD = "last_name";
 	private String lastName;	// Optional
-	public static final String USER_ID_FIELD = "user_id";
+	private static final String USER_ID_FIELD = "user_id";
 	private int userId;			// Optional
 
 	public Contact(JSONObject jsonObject) {

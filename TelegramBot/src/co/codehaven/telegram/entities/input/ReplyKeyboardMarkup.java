@@ -7,13 +7,13 @@ import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 
 public class ReplyKeyboardMarkup implements ReplyKeyboard{
 
-	public static final String KEYBOARD_FIELD ="keyboard";
+	private static final String KEYBOARD_FIELD ="keyboard";
 	private String[][] keyboard;
-	public static final String RESIZE_KEYBOARD_FIELD ="resize_keyboard";
+	private static final String RESIZE_KEYBOARD_FIELD ="resize_keyboard";
 	private Boolean resizeKeyboard;		//Optional
-	public static final String ONE_TIME_KEYBOARD_FIELD ="one_time_keyboard";
+	private static final String ONE_TIME_KEYBOARD_FIELD ="one_time_keyboard";
 	private Boolean oneTimeKeyboard;	//Optional
-	public static final String SELECTIVE_FIELD ="selective";
+	private static final String SELECTIVE_FIELD ="selective";
 	private Boolean selective;			//Optional
 	
 	public ReplyKeyboardMarkup(JSONObject jsonObject) {

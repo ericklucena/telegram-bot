@@ -4,13 +4,13 @@ import org.json.JSONObject;
 
 public class User {
 	
-	public static final String ID_FIELD = "id";
+	private static final String ID_FIELD = "id";
 	private int id;
-	public static final String FIRST_NAME_FIELD = "first_name";
+	private static final String FIRST_NAME_FIELD = "first_name";
 	private String firstName;
-	public static final String LAST_NAME_FIELD = "last_name";
+	private static final String LAST_NAME_FIELD = "last_name";
 	private String lastname;	// Optional
-	public static final String USERNAME_FIELD = "username";
+	private static final String USERNAME_FIELD = "username";
 	private String username;	// Optional
 	
 	public User(JSONObject jsonObject) {

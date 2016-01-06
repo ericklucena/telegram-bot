@@ -4,17 +4,17 @@ import org.json.JSONObject;
 
 public class Chat {
 	
-	public static final String ID_FIELD = "id";
+	private static final String ID_FIELD = "id";
 	private String id;
-	public static final String TYPE_FIELD = "type";
+	private static final String TYPE_FIELD = "type";
 	private String type; 		// private | group | supergroup | channel
-	public static final String TITLE_FIELD = "title";
+	private static final String TITLE_FIELD = "title";
 	private String title;		// Optional
-	public static final String USERNAME_FIELD = "username";
+	private static final String USERNAME_FIELD = "username";
 	private String username;	// Optional
-	public static final String FIRST_NAME_FIELD = "first_name";
+	private static final String FIRST_NAME_FIELD = "first_name";
 	private String firstName;	// Optional (only private chat)
-	public static final String LAST_NAME_FIELD = "last_name";
+	private static final String LAST_NAME_FIELD = "last_name";
 	private String lastName;	// Optional (only private chat)
 	
 	public Chat(JSONObject jsonObject) {

@@ -4,11 +4,11 @@ import org.json.JSONObject;
 
 public class File {
 
-	public static final String FILE_ID_FIELD = "file_id";
+	private static final String FILE_ID_FIELD = "file_id";
 	private String fileId;
-	public static final String FILE_SIZE_FIELD = "file_size";
+	private static final String FILE_SIZE_FIELD = "file_size";
 	private int fileSize;		//Optional
-	public static final String FILE_PATH_FIELD = "file_path";
+	private static final String FILE_PATH_FIELD = "file_path";
 	private String filePath;	//Optional
 	
 	public File(JSONObject jsonObject) {

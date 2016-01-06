@@ -5,59 +5,59 @@ import org.json.JSONObject;
 
 public class Message {
 
-	public static final String MESSAGE_ID_FIELD = "message_id";
+	private static final String MESSAGE_ID_FIELD = "message_id";
 	private int messageId;
-	public static final String FROM_FIELD = "from";
+	private static final String FROM_FIELD = "from";
 	private User from;						// Optional
-	public static final String DATE_FIELD = "date";
+	private static final String DATE_FIELD = "date";
 	private int date;						// Unix time
-	public static final String CHAT_FIELD = "chat";
+	private static final String CHAT_FIELD = "chat";
 	private Chat chat;
-	public static final String FORWARD_FROM_FIELD = "forward_from";
+	private static final String FORWARD_FROM_FIELD = "forward_from";
 	private User forwardFrom;				// Optional
-	public static final String FORWARD_DATE_FIELD = "forward_date";
+	private static final String FORWARD_DATE_FIELD = "forward_date";
 	private int forwardDate;				// Optional
-	public static final String REPLY_TO_MESSAGE_FIELD = "reply_to_message";
+	private static final String REPLY_TO_MESSAGE_FIELD = "reply_to_message";
 	private Message replyToMessage;			// Optional
-	public static final String TEXT_FIELD = "text";
+	private static final String TEXT_FIELD = "text";
 	private String text;					// Optional
-	public static final String AUDIO_FIELD = "audio";
+	private static final String AUDIO_FIELD = "audio";
 	private Audio audio;					// Optional
-	public static final String DOCUMENT_FIELD = "document";
+	private static final String DOCUMENT_FIELD = "document";
 	private Document document;				// Optional
-	public static final String PHOTO_FIELD = "photo";
+	private static final String PHOTO_FIELD = "photo";
 	private PhotoSize[] photo;			// Optional
-	public static final String STICKER_FIELD = "sticker";
+	private static final String STICKER_FIELD = "sticker";
 	private Sticker sticker;				// Optional
-	public static final String VIDEO_FIELD = "video";
+	private static final String VIDEO_FIELD = "video";
 	private Video video;					// Optional
-	public static final String VOICE_FIELD = "voice";
+	private static final String VOICE_FIELD = "voice";
 	private Voice voice;					// Optional
-	public static final String CAPTION_FIELD = "caption";
+	private static final String CAPTION_FIELD = "caption";
 	private String caption;					// Optional
-	public static final String CONTACT_FIELD = "contact";
+	private static final String CONTACT_FIELD = "contact";
 	private Contact contact;				// Optional
-	public static final String LOCATION_FIELD = "location";
+	private static final String LOCATION_FIELD = "location";
 	private Location location;				// Optional
-	public static final String NEW_CHAT_PARTICIPANT_FIELD = "new_chat_participant";
+	private static final String NEW_CHAT_PARTICIPANT_FIELD = "new_chat_participant";
 	private User newChatParticipant;		// Optional
-	public static final String LEFT_CHAT_PARTICIPANT_FIELD = "left_chat_participant";
+	private static final String LEFT_CHAT_PARTICIPANT_FIELD = "left_chat_participant";
 	private User leftChatParticipant;		// Optional
-	public static final String NEW_CHAT_TITLE_FIELD = "new_chat_title";
+	private static final String NEW_CHAT_TITLE_FIELD = "new_chat_title";
 	private String newChatTitle;			// Optional
-	public static final String NEW_CHAT_PHOTO_FIELD = "new_chat_photo";
+	private static final String NEW_CHAT_PHOTO_FIELD = "new_chat_photo";
 	private PhotoSize[] newChatPhoto;		// Optional
-	public static final String DELETE_CHAT_PHOTO_FIELD = "delete_chat_photo";
+	private static final String DELETE_CHAT_PHOTO_FIELD = "delete_chat_photo";
 	private boolean deleteChatPhoto;		// Optional
-	public static final String GROUP_CHAT_CREATED_FIELD = "group_chat_created";
+	private static final String GROUP_CHAT_CREATED_FIELD = "group_chat_created";
 	private boolean groupChatCreated;		// Optional
-	public static final String SUPERGROUP_CHAT_CREATED_FIELD = "supergroup_chat_created";
+	private static final String SUPERGROUP_CHAT_CREATED_FIELD = "supergroup_chat_created";
 	private boolean supergroupChatCreated;	// Optional
-	public static final String CHANNEL_CHAT_CREATED_FIELD = "channel_chat_created";
+	private static final String CHANNEL_CHAT_CREATED_FIELD = "channel_chat_created";
 	private boolean channelChatCreated;		// Optional
-	public static final String MIGRATED_TO_CHAT_ID_FIELD = "migrated_to_chat_id";
+	private static final String MIGRATED_TO_CHAT_ID_FIELD = "migrated_to_chat_id";
 	private int migratedToChatId;			// Optional
-	public static final String MIGRATED_FROM_CHAT_ID_FIELD = "migrated_from_chat_id";
+	private static final String MIGRATED_FROM_CHAT_ID_FIELD = "migrated_from_chat_id";
 	private int migratedFromChatId;			// Optional
 	
 	public Message(JSONObject jsonObject) {

@@ -5,9 +5,9 @@ import org.json.JSONObject;
 
 public class UserProfilePhotos {
 	
-	public static final String TOTAL_COUNT_FIELD ="total_count";
+	private static final String TOTAL_COUNT_FIELD ="total_count";
 	private int totalCount;
-	public static final String PHOTOS_FIELD ="photos";
+	private static final String PHOTOS_FIELD ="photos";
 	private PhotoSize[][] photos;
 	
 	public UserProfilePhotos(JSONObject jsonObject) {

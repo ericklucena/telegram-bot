@@ -4,17 +4,17 @@ import org.json.JSONObject;
 
 public class Audio {
 	
-	public static final String FILE_ID_FIELD ="file_id";
+	private static final String FILE_ID_FIELD ="file_id";
 	private String fileId;
-	public static final String DURATION_FIELD ="duration";
+	private static final String DURATION_FIELD ="duration";
 	private int duration; 		//in seconds
-	public static final String PERFORMER_FIELD ="performer";
+	private static final String PERFORMER_FIELD ="performer";
 	private String performer; 	//Optional
-	public static final String TITLE_FIELD ="title";
+	private static final String TITLE_FIELD ="title";
 	private String title; 		//Optional
-	public static final String MIME_TYPE_FIELD ="mime_type";
+	private static final String MIME_TYPE_FIELD ="mime_type";
 	private String mimeType;	//Optional
-	public static final String FILE_SIZE_FIELD ="file_size";
+	private static final String FILE_SIZE_FIELD ="file_size";
 	private int fileSize;		//Optional
 	
 	public Audio(JSONObject jsonObject) {

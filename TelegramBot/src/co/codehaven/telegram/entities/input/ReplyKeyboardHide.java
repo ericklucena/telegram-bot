@@ -6,9 +6,9 @@ import co.codehaven.telegram.entities.interfaces.ReplyKeyboard;
 
 public class ReplyKeyboardHide implements ReplyKeyboard{
 
-	public static final String HIDE_KEYBOARD_FIELD ="hide_keyboard";
+	private static final String HIDE_KEYBOARD_FIELD ="hide_keyboard";
 	private boolean hideKeyboard;
-	public static final String SELECTIVE_FIELD ="selective";
+	private static final String SELECTIVE_FIELD ="selective";
 	private boolean selective;		// Optional
 	
 	public ReplyKeyboardHide(JSONObject jsonObject) {

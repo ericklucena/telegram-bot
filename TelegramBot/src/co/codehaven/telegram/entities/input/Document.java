@@ -4,15 +4,15 @@ import org.json.JSONObject;
 
 public class Document {
 	
-	public static final String FILE_ID_FIELD = "file_id";
+	private static final String FILE_ID_FIELD = "file_id";
 	private String fileId;
-	public static final String THUMB_FIELD = "thumb";
+	private static final String THUMB_FIELD = "thumb";
 	private PhotoSize thumb; 	// Optional
-	public static final String FILE_NAME_FIELD = "file_name";
+	private static final String FILE_NAME_FIELD = "file_name";
 	private String fileName; 	// Optional
-	public static final String MIME_TYPE_FIELD = "mime_field"; 
+	private static final String MIME_TYPE_FIELD = "mime_field"; 
 	private String mimeType; 	// Optional
-	public static final String FILE_SIZE_FIELD = "file_size"; 
+	private static final String FILE_SIZE_FIELD = "file_size"; 
 	private int fileSize; 		// Optional
 
 	public Document(JSONObject jsonObject) {
