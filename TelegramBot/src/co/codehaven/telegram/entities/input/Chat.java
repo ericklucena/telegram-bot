@@ -19,7 +19,7 @@ public class Chat {
 	
 	public Chat(JSONObject jsonObject) {
 		super();
-		this.id = Integer.toString(jsonObject.getInt(ID_FIELD));
+		this.id = Long.toString(jsonObject.getLong(ID_FIELD));
 		this.type = jsonObject.getString(TYPE_FIELD);
 		if (jsonObject.has(TITLE_FIELD)) {
 			this.title = jsonObject.getString(TITLE_FIELD);			
